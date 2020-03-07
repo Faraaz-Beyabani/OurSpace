@@ -1,12 +1,9 @@
 import { render, fireEvent } from '@testing-library/react';
-import ListingList from '../components/Listing.js'
+import React from 'react';
+import App from '../App.js'
 
 test('ListingList is rendered', () => {
-
-    const { getByTestId } = render(
-        <ListingList items={[1, 2, 3, 4, 5]}/>
-    );
-
-    const value = getByTestId("listings-grid");
-    expect(value.items === [1, 2, 3, 4, 5])
+    const { getByTestId } = render(<App />);
+    const list = getByTestId("listings-grid");
+    expect(list).toBeInTheDocument()
 })
