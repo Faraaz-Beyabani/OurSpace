@@ -67,18 +67,16 @@ const StorageCard = ({ listing }) => {
     );
 };
 
-const ListingList = () => {
+const ListingList = ( items ) => {
 
-    const { listingList } = useContext(ListingContext);
-
-    var columnIds = [...Array(listingList.length).keys()];
+    var columnIds = [...Array(items.length).keys()];
 
     return (
         <div>
-            <Column.Group multiline>
+            <Column.Group multiline data-test-id="listings-grid">
                 {columnIds.map(i => (
                     <Column key={i} size="one-quarter">
-                        <StorageCard listing={listingList[i]} />
+                        <StorageCard listing={items[i]} />
                     </Column>
                 ))}
             </Column.Group>
