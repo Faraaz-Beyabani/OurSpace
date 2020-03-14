@@ -75,7 +75,7 @@ const ListingList = ( items ) => {
         <div>
             <Column.Group multiline data-test-id="listings-grid">
                 {columnIds.map(i => (
-                    <Column key={i} size="one-quarter">
+                    <Column key={i} data-test-id={"card-"+i} size="one-quarter">
                         <StorageCard listing={items[i]} />
                     </Column>
                 ))}

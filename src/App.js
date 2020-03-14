@@ -63,7 +63,7 @@ const App = () => {
     <ListingContext.Provider value={{ currListing, updateCurrListing, listingList, updateAll, contactViewOpen, toggleContactView }}>
       <div className="App" width="100%" height="100%" opacity="0.99">
         <ListingList />
-        <DetailView />
+        <DetailView data-test-id={"test-detail-view"}/>
         <ContactView />
         <FilterContext.Provider value={{ currFilter, updateFilter, filterViewOpen, toggleFilterViewOpen }}>
           <FilterView/>
