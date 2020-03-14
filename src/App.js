@@ -66,7 +66,7 @@ const App = () => {
         <DetailView data-test-id={"test-detail-view"}/>
         <ContactView />
         <FilterContext.Provider value={{ currFilter, updateFilter, filterViewOpen, toggleFilterViewOpen }}>
-          <FilterView/>
+          <FilterView data-cy="FilterView" />
           <BottomBar></BottomBar>
         </FilterContext.Provider>
       </div>
@@ -80,7 +80,7 @@ const BottomBar = () => {
   return (
     <div style={{height: "4vh", width: "100%", border:"10px", backgroundColor:"grey", position: "fixed", top: "96vh"}}>
       <Column.Group size="one-half">
-        <Button style={{width:"50%", top:"1vh"}} onClick={() => {
+        <Button style={{width:"50%", top:"1vh"}} data-cy={"filter-opener"} onClick={() => {
           toggleFilterViewOpen(true); setTimeout(function () { document.getElementById("filterView").classList.add("show") }, 0);
         }}>
           <img src={filter} style={{width:"2.5vh"}}/>
